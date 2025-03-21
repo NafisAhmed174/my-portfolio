@@ -69,6 +69,18 @@ const Achievements = () => {
       position: "2022 and 2025",
       url: "https://drive.google.com/file/d/1AiPMXPHqD_7BD0nsCXX9r9qbB_gqIo8-/view?usp=sharing",
       icon: <Award className="text-blue-500" size={20} />
+    },
+    {
+      title: "CodeSpark 2022 - Intra RUET Freshers' Programming Contest",
+      position: "2nd Place",
+      url: "https://toph.co/contests/training/qrjlyhg/standings",
+      icon: <Trophy className="text-silver-400" size={20} />
+    },
+    {
+      title: "CodeSmash 2021 - Intra RUET Freshers' Programming Contest",
+      position: "2nd Place",
+      url: "https://codeforces.com/spectator/ranklist/d79d9eb065507b73283afa14aef38398",
+      icon: <Trophy className="text-silver-400" size={20} />
     }
   ];
 
@@ -96,18 +108,6 @@ const Achievements = () => {
       position: "Finalist",
       url: "#",
       icon: <Trophy className="text-yellow-500" size={20} />
-    },
-    {
-      title: "CodeSmash 2021 - Intra RUET Freshers' Programming Contest",
-      position: "2nd Place",
-      url: "https://codeforces.com/spectator/ranklist/d79d9eb065507b73283afa14aef38398",
-      icon: <Trophy className="text-silver-400" size={20} />
-    },
-    {
-      title: "CodeSpark 2022 - Intra RUET Freshers' Programming Contest",
-      position: "2nd Place",
-      url: "https://toph.co/contests/training/qrjlyhg/standings",
-      icon: <Trophy className="text-silver-400" size={20} />
     },
     {
       title: "GyanJam 2024 - Intra RUET Programming Contest",
