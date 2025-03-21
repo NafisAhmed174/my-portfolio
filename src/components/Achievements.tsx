@@ -32,8 +32,14 @@ const Achievements = () => {
       }
     };
   }, []);
-
+  
   const teamAchievements = [
+    {
+      title: "ICPC Asia West Continent Finalist",
+      position: "2022 and 2025",
+      url: "https://icpc.global/ICPCID/AEBLMBK4GAGM",
+      icon: <Award className="text-blue-500" size={20} />
+    },
     {
       title: "ICPC Asia Dhaka Regional Contest 2024",
       position: "11th Place",
@@ -53,22 +59,22 @@ const Achievements = () => {
       icon: <Trophy className="text-amber-500" size={20} />
     },
     {
-      title: "UIU Inter University Programming Contest 2025",
-      position: "11th Place",
-      url: "https://bapsoj.org/contests/uiu-inter-university-programming-contest-2025/standings",
-      icon: <Trophy className="text-yellow-500" size={20} />
-    },
-    {
       title: "AUST Inter University Programming Contest 2025",
       position: "8th Place",
       url: "https://toph.co/c/mtb-presents-aust-inter-university-2025/standings",
       icon: <Trophy className="text-amber-500" size={20} />
     },
     {
-      title: "ICPC Asia West Continent Finalist",
-      position: "2022 and 2025",
-      url: "https://drive.google.com/file/d/1AiPMXPHqD_7BD0nsCXX9r9qbB_gqIo8-/view?usp=sharing",
-      icon: <Award className="text-blue-500" size={20} />
+      title: "UIU Inter University Programming Contest 2025",
+      position: "11th Place",
+      url: "https://bapsoj.org/contests/uiu-inter-university-programming-contest-2025/standings",
+      icon: <Trophy className="text-yellow-500" size={20} />
+    },
+    {
+      title: "Breaking Code'23 - Programming Contest by CSE, MBSTU",
+      position: "3rd Place",
+      url: "https://toph.co/c/mbstu-cse-inter-department-2023/standings",
+      icon: <Trophy className="text-amber-600" size={20} />
     },
     {
       title: "CodeSpark 2022 - Intra RUET Freshers' Programming Contest",
@@ -77,11 +83,11 @@ const Achievements = () => {
       icon: <Trophy className="text-silver-400" size={20} />
     },
     {
-      title: "CodeSmash 2021 - Intra RUET Freshers' Programming Contest",
-      position: "2nd Place",
-      url: "https://codeforces.com/spectator/ranklist/d79d9eb065507b73283afa14aef38398",
-      icon: <Trophy className="text-silver-400" size={20} />
-    }
+      title: "GyanJam 2024 - Intra RUET Programming Contest",
+      position: "1st Place",
+      url: "https://codeforces.com/spectator/ranklist/facbd55c595686550fba19801debe5f6?fbclid=IwY2xjawJKiWNleHRuA2FlbQIxMAABHR_DhYccfUu9_mOwLqe5YzenqCIZikT5vPDExQyvMpYwgHf3jbVr8hc80w_aem_Yi3njCykb2v5htYPDd6CPg",
+      icon: <Trophy className="text-yellow-400" size={20} />
+    },
   ];
 
   const individualAchievements = [
@@ -110,17 +116,11 @@ const Achievements = () => {
       icon: <Trophy className="text-yellow-500" size={20} />
     },
     {
-      title: "GyanJam 2024 - Intra RUET Programming Contest",
-      position: "1st Place",
-      url: "https://codeforces.com/spectator/ranklist/facbd55c595686550fba19801debe5f6?fbclid=IwY2xjawJKiWNleHRuA2FlbQIxMAABHR_DhYccfUu9_mOwLqe5YzenqCIZikT5vPDExQyvMpYwgHf3jbVr8hc80w_aem_Yi3njCykb2v5htYPDd6CPg",
-      icon: <Trophy className="text-yellow-400" size={20} />
+      title: "CodeSmash 2021 - Intra RUET Freshers' Programming Contest",
+      position: "2nd Place",
+      url: "https://codeforces.com/spectator/ranklist/d79d9eb065507b73283afa14aef38398",
+      icon: <Trophy className="text-silver-400" size={20} />
     },
-    {
-      title: "Breaking Code'23 - Programming Contest by CSE, MBSTU",
-      position: "3rd Place",
-      url: "https://toph.co/c/mbstu-cse-inter-department-2023/standings",
-      icon: <Trophy className="text-amber-600" size={20} />
-    }
   ];
 
   return (
