@@ -1,42 +1,80 @@
 
 import { cn } from '@/lib/utils';
+import { Github, Linkedin, Mail, ExternalLink } from 'lucide-react';
 
 const Hero = () => {
   return (
     <section id="top" className="min-h-screen flex items-center justify-center relative px-6 overflow-hidden">
       <div 
-        className="absolute inset-0 pointer-events-none z-0"
-        style={{
-          background: "radial-gradient(circle at top right, rgba(230, 230, 230, 0.2) 0%, transparent 70%)",
-        }}
+        className="absolute inset-0 pointer-events-none z-0 gradient-bg"
       />
       
       <div className="container mx-auto relative z-10">
         <div className="max-w-3xl mx-auto text-center">
           <span className="uppercase text-sm tracking-widest opacity-60 block mb-3 opacity-0 animate-slide-in">
-            Welcome to my portfolio
+            Computer Science & Engineering
           </span>
           
           <h1 className="text-4xl md:text-5xl lg:text-6xl font-medium leading-tight md:leading-tight lg:leading-tight mb-6 opacity-0 animate-slide-in animate-delay-100">
-            Creating thoughtful user experiences with 
-            <span className="relative inline-block">
-              <span className="relative z-10">precise design</span>
-              <span className="absolute bottom-2 left-0 w-full h-3 bg-primary/10 -z-10 transform skew-x-12"></span>
-            </span>
+            Hi, I'm 
+            <span className="gradient-text ml-2">Nafis Ahmed</span>
           </h1>
           
           <p className="text-foreground/70 text-lg md:text-xl max-w-2xl mx-auto mb-8 opacity-0 animate-slide-in animate-delay-200">
-            I craft digital experiences that strike the perfect balance between 
-            beautiful design and thoughtful functionality.
+            I'm a passionate competitive programmer and aspiring software developer, currently pursuing my Bachelor's degree in Computer Science & Engineering at Rajshahi University of Engineering & Technology.
           </p>
           
-          <div className="flex flex-wrap justify-center gap-4 opacity-0 animate-slide-in animate-delay-300">
-            <a href="#work" className="button-fancy">
-              View My Work
+          <div className="flex flex-wrap justify-center gap-6 opacity-0 animate-slide-in animate-delay-300 mb-8">
+            <a 
+              href="https://github.com/NafisAhmed174" 
+              target="_blank"
+              rel="noopener noreferrer"
+              className="flex items-center gap-2 button-fancy"
+            >
+              <Github size={18} />
+              GitHub
             </a>
-            <a href="#contact" className="button-outline">
-              Get In Touch
+            <a 
+              href="https://www.linkedin.com/in/nafis-ahmed-220757275/" 
+              target="_blank"
+              rel="noopener noreferrer"
+              className="flex items-center gap-2 button-outline"
+            >
+              <Linkedin size={18} />
+              LinkedIn
             </a>
+            <a 
+              href="mailto:nafisahmed947@gmail.com" 
+              className="flex items-center gap-2 button-outline"
+            >
+              <Mail size={18} />
+              Email Me
+            </a>
+          </div>
+
+          <div className="flex flex-wrap justify-center gap-4 opacity-0 animate-slide-in animate-delay-400">
+            <div className="flex items-center gap-1 bg-secondary/80 px-4 py-2 rounded-full">
+              <span className="font-medium">Codeforces:</span>
+              <a 
+                href="https://codeforces.com/profile/Nafis_Ahmed_174" 
+                target="_blank"
+                rel="noopener noreferrer"
+                className="flex items-center text-primary gap-1 hover:underline"
+              >
+                1910 (Candidate Master) <ExternalLink size={14} />
+              </a>
+            </div>
+            <div className="flex items-center gap-1 bg-secondary/80 px-4 py-2 rounded-full">
+              <span className="font-medium">CodeChef:</span>
+              <a 
+                href="https://www.codechef.com/users/hacker174" 
+                target="_blank"
+                rel="noopener noreferrer"
+                className="flex items-center text-primary gap-1 hover:underline"
+              >
+                2107 (5 Stars) <ExternalLink size={14} />
+              </a>
+            </div>
           </div>
         </div>
       </div>

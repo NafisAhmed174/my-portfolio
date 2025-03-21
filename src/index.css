@@ -14,24 +14,24 @@
     --popover: 0 0% 100%;
     --popover-foreground: 240 10% 3.9%;
 
-    --primary: 240 5.9% 10%;
+    --primary: 252 87% 67%;
     --primary-foreground: 0 0% 98%;
 
-    --secondary: 240 4.8% 95.9%;
-    --secondary-foreground: 240 5.9% 10%;
+    --secondary: 252 20% 95%;
+    --secondary-foreground: 252 50% 45%;
 
     --muted: 240 4.8% 95.9%;
     --muted-foreground: 240 3.8% 46.1%;
 
-    --accent: 240 4.8% 95.9%;
-    --accent-foreground: 240 5.9% 10%;
+    --accent: 191 97% 77%;
+    --accent-foreground: 191 97% 27%;
 
     --destructive: 0 84.2% 60.2%;
     --destructive-foreground: 0 0% 98%;
 
     --border: 240 5.9% 90%;
     --input: 240 5.9% 90%;
-    --ring: 240 5.9% 10%;
+    --ring: 252 87% 67%;
 
     --radius: 0.5rem;
   }
@@ -46,8 +46,8 @@
     --popover: 240 10% 3.9%;
     --popover-foreground: 0 0% 98%;
 
-    --primary: 0 0% 98%;
-    --primary-foreground: 240 5.9% 10%;
+    --primary: 252 87% 67%;
+    --primary-foreground: 0 0% 98%;
 
     --secondary: 240 3.7% 15.9%;
     --secondary-foreground: 0 0% 98%;
@@ -55,15 +55,15 @@
     --muted: 240 3.7% 15.9%;
     --muted-foreground: 240 5% 64.9%;
 
-    --accent: 240 3.7% 15.9%;
-    --accent-foreground: 0 0% 98%;
+    --accent: 191 97% 77%;
+    --accent-foreground: 191 97% 27%;
 
     --destructive: 0 62.8% 30.6%;
     --destructive-foreground: 0 0% 98%;
 
     --border: 240 3.7% 15.9%;
     --input: 240 3.7% 15.9%;
-    --ring: 240 4.9% 83.9%;
+    --ring: 252 87% 67%;
   }
 }
 
@@ -108,6 +108,33 @@
   .section-padding {
     @apply py-20 md:py-28 lg:py-32;
   }
+
+  .gradient-bg {
+    background: linear-gradient(135deg, hsla(252, 87%, 67%, 0.1) 0%, hsla(191, 97%, 77%, 0.1) 100%);
+  }
+
+  .gradient-text {
+    @apply bg-gradient-to-r from-primary to-accent bg-clip-text text-transparent;
+  }
+
+  .gradient-border {
+    position: relative;
+  }
+  
+  .gradient-border::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    border-radius: inherit;
+    padding: 2px;
+    background: linear-gradient(to right, hsl(var(--primary)), hsl(var(--accent)));
+    -webkit-mask: 
+      linear-gradient(#fff 0 0) content-box, 
+      linear-gradient(#fff 0 0);
+    -webkit-mask-composite: xor;
+    mask-composite: exclude;
+    pointer-events: none;
+  }
 }
 
 @layer components {
@@ -120,7 +147,7 @@
   }
   
   .button-outline {
-    @apply rounded-full px-6 py-3 border border-primary/10 text-foreground/80 hover:border-primary/80 hover:text-foreground transition-all duration-300;
+    @apply rounded-full px-6 py-3 border border-primary/20 text-foreground/80 hover:border-primary/80 hover:text-foreground transition-all duration-300;
   }
   
   .nav-link {
@@ -129,6 +156,14 @@
   
   .project-card {
     @apply rounded-lg overflow-hidden bg-card shadow-sm hover:shadow-md transition-all duration-300 hover:-translate-y-1;
+  }
+
+  .achievement-card {
+    @apply p-5 rounded-xl border border-border bg-card/50 hover:bg-card/80 transition-all duration-300;
+  }
+
+  .skill-badge {
+    @apply inline-flex items-center px-3 py-1 rounded-full text-xs font-medium bg-secondary text-secondary-foreground m-1;
   }
 }
 

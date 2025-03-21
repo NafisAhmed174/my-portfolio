@@ -1,6 +1,5 @@
 
 import { useEffect, useRef } from 'react';
-import { cn } from '@/lib/utils';
 
 const About = () => {
   const sectionRef = useRef<HTMLElement>(null);
@@ -36,7 +35,7 @@ const About = () => {
             <div className="relative">
               <div className="aspect-square rounded-2xl overflow-hidden">
                 <div className="w-full h-full bg-secondary/50 about-animate opacity-0" style={{ animationDelay: '100ms' }}>
-                  {/* Replace with your profile image */}
+                  {/* Profile image placeholder - replace with your actual image */}
                   <div className="w-full h-full flex items-center justify-center text-foreground/20 font-light">
                     Profile Image
                   </div>
@@ -51,10 +50,10 @@ const About = () => {
               </div>
               
               <div className="absolute -top-8 -right-8 about-animate opacity-0 glass rounded-xl p-4 shadow-sm" style={{ animationDelay: '500ms' }}>
-                <div className="flex items-center space-x-2">
-                  <div className="w-2 h-2 rounded-full bg-[#F31260]"></div>
-                  <div className="w-2 h-2 rounded-full bg-[#F5A524]"></div>
-                  <div className="w-2 h-2 rounded-full bg-[#17C964]"></div>
+                <div className="flex flex-col">
+                  <span className="text-sm font-medium">Education</span>
+                  <span className="text-xs text-foreground/70">RUET, CSE</span>
+                  <span className="text-xs text-foreground/70">CGPA: 3.28/4.00</span>
                 </div>
               </div>
             </div>
@@ -63,29 +62,30 @@ const About = () => {
           <div>
             <span className="uppercase text-sm tracking-widest opacity-60 block mb-2 about-animate opacity-0">About Me</span>
             <h2 className="mb-6 about-animate opacity-0" style={{ animationDelay: '100ms' }}>
-              I bring ideas to life through design and code
+              I solve complex problems with code and algorithms
             </h2>
             
             <p className="text-foreground/70 text-lg mb-6 about-animate opacity-0" style={{ animationDelay: '200ms' }}>
-              Hello! I'm a passionate designer and developer dedicated to creating 
-              exceptional digital experiences. I believe in the power of clean, 
-              thoughtful design and efficient, purpose-driven development.
+              I'm a dedicated competitive programmer with a passion for algorithmic problem-solving. 
+              Currently pursuing my Bachelor's degree in Computer Science & Engineering at Rajshahi 
+              University of Engineering & Technology.
             </p>
             
             <p className="text-foreground/70 text-lg mb-8 about-animate opacity-0" style={{ animationDelay: '300ms' }}>
-              My approach combines aesthetic sensibility with technical expertise, 
-              ensuring projects not only look beautiful but function flawlessly.
+              I've solved over 2000 algorithmic problems across various online platforms and 
+              participated in numerous competitive programming contests. My experience has 
+              honed my analytical thinking and problem-solving skills.
             </p>
             
             <div className="grid grid-cols-2 gap-6 mb-8">
               {[
-                { label: 'UX/UI Design', value: '5+ years' },
-                { label: 'Development', value: '4+ years' },
-                { label: 'Projects', value: '50+' },
-                { label: 'Clients', value: '30+' }
+                { label: 'Codeforces', value: 'Candidate Master' },
+                { label: 'CodeChef', value: '5 Stars' },
+                { label: 'Problems Solved', value: '2000+' },
+                { label: 'Contests', value: '50+' }
               ].map((item, index) => (
                 <div key={index} className="about-animate opacity-0" style={{ animationDelay: `${400 + (index * 100)}ms` }}>
-                  <div className="text-2xl font-medium">{item.value}</div>
+                  <div className="text-xl font-medium">{item.value}</div>
                   <div className="text-foreground/60 text-sm">{item.label}</div>
                 </div>
               ))}
@@ -93,7 +93,7 @@ const About = () => {
             
             <div className="about-animate opacity-0" style={{ animationDelay: '800ms' }}>
               <a href="#contact" className="button-fancy">
-                Let's work together
+                Let's connect
               </a>
             </div>
           </div>

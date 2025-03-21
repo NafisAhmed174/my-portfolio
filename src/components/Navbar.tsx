@@ -1,9 +1,11 @@
 
 import { useState, useEffect } from 'react';
 import { cn } from '@/lib/utils';
+import { Menu, X } from 'lucide-react';
 
 const Navbar = () => {
   const [scrolled, setScrolled] = useState(false);
+  const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
   
   useEffect(() => {
     const handleScroll = () => {
@@ -13,6 +15,18 @@ const Navbar = () => {
     window.addEventListener('scroll', handleScroll);
     return () => window.removeEventListener('scroll', handleScroll);
   }, []);
+
+  const toggleMobileMenu = () => {
+    setMobileMenuOpen(!mobileMenuOpen);
+  };
+
+  const navItems = [
+    { name: 'About', href: '#about' },
+    { name: 'Skills', href: '#skills' },
+    { name: 'Achievements', href: '#achievements' },
+    { name: 'Projects', href: '#work' },
+    { name: 'Contact', href: '#contact' },
+  ];
 
   return (
     <header 
@@ -27,24 +41,24 @@ const Navbar = () => {
         <div className="flex items-center justify-between">
           <a 
             href="#top" 
-            className="text-xl font-medium tracking-tighter opacity-0 animate-fade-in"
+            className="text-xl font-medium tracking-tighter gradient-text opacity-0 animate-fade-in"
           >
-            Portfolio
+            Nafis Ahmed
           </a>
           
           <nav className="hidden md:block">
             <ul className="flex items-center space-x-8">
-              {['About', 'Work', 'Contact'].map((item, index) => (
+              {navItems.map((item, index) => (
                 <li 
-                  key={item} 
+                  key={item.name} 
                   className="opacity-0 animate-fade-in"
                   style={{ animationDelay: `${(index + 1) * 100}ms` }}
                 >
                   <a 
-                    href={`#${item.toLowerCase()}`} 
+                    href={item.href} 
                     className="nav-link"
                   >
-                    {item}
+                    {item.name}
                   </a>
                 </li>
               ))}
@@ -52,15 +66,38 @@ const Navbar = () => {
           </nav>
           
           <button 
-            className="md:hidden opacity-0 animate-fade-in"
+            className="md:hidden opacity-0 animate-fade-in z-50"
             aria-label="Toggle Menu"
+            onClick={toggleMobileMenu}
           >
-            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
-              <line x1="4" x2="20" y1="12" y2="12"></line>
-              <line x1="4" x2="20" y1="6" y2="6"></line>
-              <line x1="4" x2="20" y1="18" y2="18"></line>
-            </svg>
+            {mobileMenuOpen ? (
+              <X size={24} />
+            ) : (
+              <Menu size={24} />
+            )}
           </button>
+
+          {/* Mobile menu */}
+          <div className={cn(
+            "fixed inset-0 z-40 bg-white/95 dark:bg-black/95 flex flex-col items-center justify-center transition-transform duration-300 md:hidden",
+            mobileMenuOpen ? "translate-x-0" : "translate-x-full"
+          )}>
+            <nav>
+              <ul className="flex flex-col items-center space-y-8">
+                {navItems.map((item) => (
+                  <li key={item.name}>
+                    <a 
+                      href={item.href} 
+                      className="text-xl font-medium"
+                      onClick={() => setMobileMenuOpen(false)}
+                    >
+                      {item.name}
+                    </a>
+                  </li>
+                ))}
+              </ul>
+            </nav>
+          </div>
         </div>
       </div>
     </header>

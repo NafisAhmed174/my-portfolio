@@ -1,6 +1,6 @@
 
 import { useEffect, useRef } from 'react';
-import { cn } from '@/lib/utils';
+import { Mail, Phone, MapPin, Github, Linkedin, ExternalLink } from 'lucide-react';
 
 const Contact = () => {
   const sectionRef = useRef<HTMLElement>(null);
@@ -31,63 +31,101 @@ const Contact = () => {
   return (
     <section id="contact" ref={sectionRef} className="section-padding px-6 relative">
       <div className="container mx-auto">
-        <div className="glass rounded-2xl overflow-hidden">
+        <div className="glass gradient-border rounded-2xl overflow-hidden">
           <div className="grid grid-cols-1 lg:grid-cols-2">
             <div className="p-8 md:p-12 lg:p-16">
               <span className="uppercase text-sm tracking-widest opacity-60 block mb-2 contact-animate opacity-0">Contact</span>
               <h2 className="mb-4 contact-animate opacity-0" style={{ animationDelay: '100ms' }}>
-                Let's work together
+                Let's connect
               </h2>
               <p className="text-foreground/70 text-lg mb-8 contact-animate opacity-0" style={{ animationDelay: '200ms' }}>
-                I'm currently available for freelance work. If you have a project
-                that needs some creative direction, design work, or development, I'd love to hear about it.
+                I'm interested in software development opportunities, competitive programming collaborations,
+                and interesting projects. Feel free to reach out!
               </p>
               
               <div className="space-y-6 contact-animate opacity-0" style={{ animationDelay: '300ms' }}>
                 <div className="flex items-center space-x-4">
                   <div className="w-10 h-10 rounded-full bg-secondary/80 flex items-center justify-center">
-                    <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"></path></svg>
+                    <Phone size={18} />
                   </div>
                   <div>
                     <div className="text-sm opacity-70">Phone</div>
-                    <div>+1 (555) 123-4567</div>
+                    <a href="tel:+8801902311989" className="hover:text-primary">+880 1902311989</a>
                   </div>
                 </div>
                 
                 <div className="flex items-center space-x-4">
                   <div className="w-10 h-10 rounded-full bg-secondary/80 flex items-center justify-center">
-                    <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"></path><polyline points="22,6 12,13 2,6"></polyline></svg>
+                    <Mail size={18} />
                   </div>
                   <div>
                     <div className="text-sm opacity-70">Email</div>
-                    <div>hello@example.com</div>
+                    <div className="flex flex-col gap-1">
+                      <a href="mailto:nafisahmed947@gmail.com" className="hover:text-primary">nafisahmed947@gmail.com</a>
+                      <a href="mailto:2003174@student.ruet.ac.bd" className="hover:text-primary">2003174@student.ruet.ac.bd</a>
+                    </div>
                   </div>
                 </div>
                 
                 <div className="flex items-center space-x-4">
                   <div className="w-10 h-10 rounded-full bg-secondary/80 flex items-center justify-center">
-                    <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"></path><circle cx="12" cy="10" r="3"></circle></svg>
+                    <MapPin size={18} />
                   </div>
                   <div>
                     <div className="text-sm opacity-70">Location</div>
-                    <div>San Francisco, CA</div>
+                    <div>Rajshahi, Bangladesh</div>
                   </div>
                 </div>
               </div>
               
               <div className="mt-8 contact-animate opacity-0" style={{ animationDelay: '400ms' }}>
-                <div className="uppercase text-sm tracking-widest opacity-60 mb-4">Connect</div>
-                <div className="flex space-x-4">
-                  {['twitter', 'github', 'dribbble', 'linkedin'].map((platform) => (
-                    <a 
-                      key={platform} 
-                      href="#" 
-                      className="w-10 h-10 rounded-full bg-secondary/50 flex items-center justify-center transition-transform hover:scale-110"
-                    >
-                      <span className="sr-only">{platform}</span>
-                      <div className="w-5 h-5 opacity-70"></div>
-                    </a>
-                  ))}
+                <div className="uppercase text-sm tracking-widest opacity-60 mb-4">Find Me Online</div>
+                <div className="flex flex-wrap gap-4">
+                  <a 
+                    href="https://github.com/NafisAhmed174" 
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="w-10 h-10 rounded-full bg-secondary/50 flex items-center justify-center transition-transform hover:scale-110 hover:bg-primary/20"
+                  >
+                    <span className="sr-only">GitHub</span>
+                    <Github size={20} className="opacity-70" />
+                  </a>
+                  <a 
+                    href="https://www.linkedin.com/in/nafis-ahmed-220757275/" 
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="w-10 h-10 rounded-full bg-secondary/50 flex items-center justify-center transition-transform hover:scale-110 hover:bg-primary/20"
+                  >
+                    <span className="sr-only">LinkedIn</span>
+                    <Linkedin size={20} className="opacity-70" />
+                  </a>
+                  <a 
+                    href="https://codeforces.com/profile/Nafis_Ahmed_174" 
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="w-10 h-10 rounded-full bg-secondary/50 flex items-center justify-center transition-transform hover:scale-110 hover:bg-primary/20"
+                  >
+                    <span className="sr-only">Codeforces</span>
+                    <div className="text-xs font-bold opacity-70">CF</div>
+                  </a>
+                  <a 
+                    href="https://www.codechef.com/users/hacker174" 
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="w-10 h-10 rounded-full bg-secondary/50 flex items-center justify-center transition-transform hover:scale-110 hover:bg-primary/20"
+                  >
+                    <span className="sr-only">CodeChef</span>
+                    <div className="text-xs font-bold opacity-70">CC</div>
+                  </a>
+                  <a 
+                    href="https://www.stopstalk.com/user/profile/Nafis_Ahmed_174" 
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="w-10 h-10 rounded-full bg-secondary/50 flex items-center justify-center transition-transform hover:scale-110 hover:bg-primary/20"
+                  >
+                    <span className="sr-only">StopStalk</span>
+                    <ExternalLink size={18} className="opacity-70" />
+                  </a>
                 </div>
               </div>
             </div>
@@ -124,7 +162,7 @@ const Contact = () => {
                     id="message" 
                     rows={5}
                     className="w-full px-4 py-3 rounded-lg border border-border bg-background focus:outline-none focus:ring-2 focus:ring-primary/20 focus:border-primary/20 transition-all resize-none"
-                    placeholder="Hello, I'd like to talk about..."
+                    placeholder="Hello, I'd like to discuss..."
                   ></textarea>
                 </div>
                 
