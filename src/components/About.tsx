@@ -82,7 +82,7 @@ const About = () => {
                 { label: 'Codeforces', value: 'Candidate Master' },
                 { label: 'CodeChef', value: '5 Stars' },
                 { label: 'Problems Solved', value: '2000+' },
-                { label: 'Contests', value: '50+' }
+                { label: 'Onsite Contests', value: '20+' }
               ].map((item, index) => (
                 <div key={index} className="about-animate opacity-0" style={{ animationDelay: `${400 + (index * 100)}ms` }}>
                   <div className="text-xl font-medium">{item.value}</div>
