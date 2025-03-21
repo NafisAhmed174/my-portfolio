@@ -29,7 +29,7 @@ const Hero = () => {
               href="https://github.com/NafisAhmed174" 
               target="_blank"
               rel="noopener noreferrer"
-              className="flex items-center gap-2 button-fancy"
+              className="flex items-center gap-2 button-outline"
               aria-label="GitHub Profile"
             >
               <Github size={18} />

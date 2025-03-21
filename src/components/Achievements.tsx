@@ -206,7 +206,7 @@ const Achievements = () => {
             href="https://icpc.global/ICPCID/AEBLMBK4GAGM" 
             target="_blank"
             rel="noopener noreferrer"
-            className="button-outline"
+            className="button-fancy"
           >
             View ICPC Profile
           </a>

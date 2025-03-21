@@ -1,4 +1,3 @@
-
 import { useEffect, useRef } from 'react';
 import { Github, ExternalLink } from 'lucide-react';
 
@@ -32,11 +31,12 @@ const Projects = () => {
     {
       title: "E-Commerce Platform for Small Businesses",
       category: "Web Development",
-      description: "A 3rd-year academic project that develops a user-friendly e-commerce platform for small businesses. Features include secure user authentication, product management, shopping cart and checkout, advanced search, and responsive design.",
+      description: "A 3rd-year academic project that develops a user-friendly e-commerce platform for small businesses. Features include secure user authentication, product management, shopping cart and checkout, and responsive design.",
       technologies: ["MERN Stack", "MongoDB", "Express.js", "React.js", "Node.js"],
       github: "https://github.com/NafisAhmed174/CSE-3100-Project",
       live: null,
-      status: "In Progress"
+      status: "Complete",
+      image: "/project.png"
     },
     {
       title: "Problem Solving Repository",
@@ -45,7 +45,8 @@ const Projects = () => {
       technologies: ["C++", "Algorithms", "Data Structures"],
       github: "https://github.com/NafisAhmed174",
       live: null,
-      status: "Ongoing"
+      status: "Ongoing",
+      image: null
     }
   ];
 
@@ -77,9 +78,13 @@ const Projects = () => {
               style={{ animationDelay: `${300 + (index * 100)}ms` }}
             >
               <div className="aspect-video bg-secondary/50 relative overflow-hidden">
-                <div className="w-full h-full flex items-center justify-center text-foreground/20 font-light">
-                  Project Image
-                </div>
+                {project.image ? (
+                  <img src={project.image} alt={project.title} className="w-full h-full object-cover" />
+                ) : (
+                  <div className="w-full h-full flex items-center justify-center text-foreground/20 font-light">
+                    Project Image
+                  </div>
+                )}
                 {project.status && (
                   <div className="absolute top-4 right-4 px-3 py-1 rounded-full bg-primary/90 text-white text-xs font-medium">
                     {project.status}
