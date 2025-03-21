@@ -1,5 +1,5 @@
 
-import { Github, Linkedin, Mail, Phone } from "lucide-react";
+import { Github, Linkedin, Mail, Phone, Download } from "lucide-react";
 
 const Footer = () => {
   return (
@@ -9,6 +9,18 @@ const Footer = () => {
           <div className="mb-4 md:mb-0">
             <a href="#top" className="text-xl font-medium tracking-tighter gradient-text">
               Nafis Ahmed
+            </a>
+          </div>
+          
+          <div className="mb-4 md:mb-0 flex items-center">
+            <a 
+              href="/Nafis_Ahmed_CV.pdf" 
+              target="_blank"
+              rel="noopener noreferrer"
+              className="flex items-center gap-2 text-foreground/70 hover:text-primary transition-colors"
+            >
+              <Download size={18} />
+              <span>Download CV</span>
             </a>
           </div>
           

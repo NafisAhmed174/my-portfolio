@@ -1,9 +1,12 @@
 
-import { useEffect, useRef } from 'react';
-import { ExternalLink, Trophy, Award, Star } from 'lucide-react';
+import { useEffect, useRef, useState } from 'react';
+import { ExternalLink, Trophy, Award, Star, Download, User, Users } from 'lucide-react';
+import { Button } from './ui/button';
+import { cn } from '@/lib/utils';
 
 const Achievements = () => {
   const sectionRef = useRef<HTMLElement>(null);
+  const [activeTab, setActiveTab] = useState<'team' | 'individual'>('team');
   
   useEffect(() => {
     const observer = new IntersectionObserver(
@@ -30,7 +33,7 @@ const Achievements = () => {
     };
   }, []);
 
-  const competitiveAchievements = [
+  const teamAchievements = [
     {
       title: "ICPC Asia Dhaka Regional Contest 2024",
       position: "11th Place",
@@ -56,11 +59,20 @@ const Achievements = () => {
       icon: <Trophy className="text-yellow-500" size={20} />
     },
     {
-      title: "Honorable mention in The 2022 ICPC Asia West Continent Final Contest",
-      position: "",
+      title: "AUST Inter University Programming Contest 2025",
+      position: "8th Place",
+      url: "https://toph.co/c/mtb-presents-aust-inter-university-2025/standings",
+      icon: <Trophy className="text-amber-500" size={20} />
+    },
+    {
+      title: "ICPC Asia West Continent Finalist",
+      position: "2022 and 2025",
       url: "https://drive.google.com/file/d/1AiPMXPHqD_7BD0nsCXX9r9qbB_gqIo8-/view?usp=sharing",
       icon: <Award className="text-blue-500" size={20} />
-    },
+    }
+  ];
+
+  const individualAchievements = [
     {
       title: "Codeforces",
       position: "Max Rating: 1910 (Candidate Master)",
@@ -78,13 +90,43 @@ const Achievements = () => {
       position: "Top 7% out of 20K participants",
       url: "https://www.facebook.com/codingcompetitions/hacker-cup/2023/certificate/484429990219579",
       icon: <Award className="text-blue-500" size={20} />
+    },
+    {
+      title: "SRBD Code Contest 2024",
+      position: "Finalist",
+      url: "#",
+      icon: <Trophy className="text-yellow-500" size={20} />
+    },
+    {
+      title: "CodeSmash 2021 - Intra RUET Freshers' Programming Contest",
+      position: "2nd Place",
+      url: "https://codeforces.com/spectator/ranklist/d79d9eb065507b73283afa14aef38398",
+      icon: <Trophy className="text-silver-400" size={20} />
+    },
+    {
+      title: "CodeSpark 2022 - Intra RUET Freshers' Programming Contest",
+      position: "2nd Place",
+      url: "https://toph.co/contests/training/qrjlyhg/standings",
+      icon: <Trophy className="text-silver-400" size={20} />
+    },
+    {
+      title: "GyanJam 2024 - Intra RUET Programming Contest",
+      position: "1st Place",
+      url: "https://codeforces.com/spectator/ranklist/facbd55c595686550fba19801debe5f6?fbclid=IwY2xjawJKiWNleHRuA2FlbQIxMAABHR_DhYccfUu9_mOwLqe5YzenqCIZikT5vPDExQyvMpYwgHf3jbVr8hc80w_aem_Yi3njCykb2v5htYPDd6CPg",
+      icon: <Trophy className="text-yellow-400" size={20} />
+    },
+    {
+      title: "Breaking Code'23 - Programming Contest by CSE, MBSTU",
+      position: "3rd Place",
+      url: "https://toph.co/c/mbstu-cse-inter-department-2023/standings",
+      icon: <Trophy className="text-amber-600" size={20} />
     }
   ];
 
   return (
     <section id="achievements" ref={sectionRef} className="section-padding px-6 relative">
       <div className="container mx-auto relative z-10">
-        <div className="text-center max-w-2xl mx-auto mb-16">
+        <div className="text-center max-w-2xl mx-auto mb-10">
           <span className="uppercase text-sm tracking-widest opacity-60 block mb-2 achievement-animate opacity-0">Accomplishments</span>
           <h2 className="mb-4 achievement-animate opacity-0" style={{ animationDelay: '100ms' }}>
             Competitive Programming Achievements
@@ -92,14 +134,52 @@ const Achievements = () => {
           <p className="text-foreground/70 text-lg achievement-animate opacity-0" style={{ animationDelay: '200ms' }}>
             I've participated in numerous competitive programming contests and achieved significant results.
           </p>
+          <div className="mt-6 mb-8 flex justify-center achievement-animate opacity-0" style={{ animationDelay: '300ms' }}>
+            <a 
+              href="/Nafis_Ahmed_CV.pdf" 
+              target="_blank"
+              rel="noopener noreferrer"
+              className="button-fancy flex items-center gap-2"
+            >
+              <Download size={18} />
+              Download CV
+            </a>
+          </div>
+        </div>
+        
+        <div className="flex justify-center mb-8 achievement-animate opacity-0" style={{ animationDelay: '400ms' }}>
+          <div className="inline-flex rounded-md bg-secondary/50 p-1">
+            <Button
+              variant="ghost"
+              className={cn(
+                "rounded-md px-4 py-2 flex items-center gap-2",
+                activeTab === 'team' ? "bg-white/90 dark:bg-primary/90 text-black dark:text-white shadow-sm" : "hover:bg-white/20 dark:hover:bg-primary/20"
+              )}
+              onClick={() => setActiveTab('team')}
+            >
+              <Users size={16} />
+              <span>Team Achievements</span>
+            </Button>
+            <Button
+              variant="ghost"
+              className={cn(
+                "rounded-md px-4 py-2 flex items-center gap-2",
+                activeTab === 'individual' ? "bg-white/90 dark:bg-primary/90 text-black dark:text-white shadow-sm" : "hover:bg-white/20 dark:hover:bg-primary/20"
+              )}
+              onClick={() => setActiveTab('individual')}
+            >
+              <User size={16} />
+              <span>Individual Achievements</span>
+            </Button>
+          </div>
         </div>
         
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-          {competitiveAchievements.map((achievement, index) => (
+          {(activeTab === 'team' ? teamAchievements : individualAchievements).map((achievement, index) => (
             <div 
               key={index} 
               className="achievement-card achievement-animate opacity-0 hover:-translate-y-1"
-              style={{ animationDelay: `${300 + (index * 100)}ms` }}
+              style={{ animationDelay: `${500 + (index * 100)}ms` }}
             >
               <div className="flex items-start gap-3">
                 <div className="mt-1">
