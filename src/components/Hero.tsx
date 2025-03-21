@@ -1,6 +1,5 @@
-
 import { cn } from '@/lib/utils';
-import { Github, Linkedin, Mail, ExternalLink, Download} from 'lucide-react';
+import { Github, Linkedin, Mail, ExternalLink, Download } from 'lucide-react';
 
 const Hero = () => {
   const scrollToNextSection = () => {
@@ -12,23 +11,17 @@ const Hero = () => {
 
   return (
     <section id="top" className="min-h-screen flex items-center justify-center relative px-6 overflow-hidden">
-      <div 
-        className="absolute inset-0 pointer-events-none z-0 gradient-bg"
-      />
+      <div className="absolute inset-0 pointer-events-none z-0 gradient-bg" />
       
       <div className="container mx-auto relative z-10">
         <div className="max-w-3xl mx-auto text-center">
-          <span className="uppercase text-sm tracking-widest opacity-60 block mb-3 opacity-0 animate-slide-in">
-            Computer Science & Engineering
-          </span>
           
           <h1 className="text-4xl md:text-5xl lg:text-6xl font-medium leading-tight md:leading-tight lg:leading-tight mb-6 opacity-0 animate-slide-in animate-delay-100">
-            Hi, I'm 
-            <span className="gradient-text ml-2">Nafis Ahmed</span>
+            Hi, I'm <span className="gradient-text ml-2">Nafis Ahmed</span>
           </h1>
           
           <p className="text-foreground/70 text-lg md:text-xl max-w-2xl mx-auto mb-8 opacity-0 animate-slide-in animate-delay-200">
-            I'm a passionate competitive programmer and aspiring software developer, currently pursuing my Bachelor's degree in Computer Science & Engineering at Rajshahi University of Engineering & Technology.
+            A Competitive Programmer & MERN Stack Developer passionate about building scalable solutions.
           </p>
           
           <div className="flex flex-wrap justify-center gap-6 opacity-0 animate-slide-in animate-delay-300 mb-8">
@@ -37,6 +30,7 @@ const Hero = () => {
               target="_blank"
               rel="noopener noreferrer"
               className="flex items-center gap-2 button-fancy"
+              aria-label="GitHub Profile"
             >
               <Github size={18} />
               GitHub
@@ -46,6 +40,7 @@ const Hero = () => {
               target="_blank"
               rel="noopener noreferrer"
               className="flex items-center gap-2 button-outline"
+              aria-label="LinkedIn Profile"
             >
               <Linkedin size={18} />
               LinkedIn
@@ -53,6 +48,7 @@ const Hero = () => {
             <a 
               href="mailto:nafisahmed947@gmail.com" 
               className="flex items-center gap-2 button-outline"
+              aria-label="Email Nafis"
             >
               <Mail size={18} />
               Email Me
@@ -89,6 +85,7 @@ const Hero = () => {
               target="_blank"
               rel="noopener noreferrer"
               className="button-fancy flex items-center gap-2"
+              aria-label="Download CV"
             >
               <Download size={18} />
               Download CV
