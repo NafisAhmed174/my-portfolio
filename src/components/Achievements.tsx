@@ -21,17 +21,22 @@ const Achievements = () => {
       },
       { threshold: 0.1 }
     );
-    
+  
     if (sectionRef.current) {
       observer.observe(sectionRef.current);
     }
-    
+  
     return () => {
       if (sectionRef.current) {
         observer.unobserve(sectionRef.current);
       }
+      // Reset animations when switching tabs
+      document.querySelectorAll('.achievement-animate').forEach((el) => {
+        el.classList.remove('animate-scale-in');
+      });
     };
-  }, []);
+  }, [activeTab]); // 👈 Now it re-runs when switching tabs
+  
   
   const teamAchievements = [
     {
@@ -134,17 +139,6 @@ const Achievements = () => {
           <p className="text-foreground/70 text-lg achievement-animate opacity-0" style={{ animationDelay: '200ms' }}>
             I've participated in numerous competitive programming contests and achieved significant results.
           </p>
-          <div className="mt-6 mb-8 flex justify-center achievement-animate opacity-0" style={{ animationDelay: '300ms' }}>
-            <a 
-              href="/Nafis_Ahmed_CV.pdf" 
-              target="_blank"
-              rel="noopener noreferrer"
-              className="button-fancy flex items-center gap-2"
-            >
-              <Download size={18} />
-              Download CV
-            </a>
-          </div>
         </div>
         
         <div className="flex justify-center mb-8 achievement-animate opacity-0" style={{ animationDelay: '400ms' }}>
@@ -174,7 +168,7 @@ const Achievements = () => {
           </div>
         </div>
         
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+        <div key={activeTab} className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
           {(activeTab === 'team' ? teamAchievements : individualAchievements).map((achievement, index) => (
             <div 
               key={index} 

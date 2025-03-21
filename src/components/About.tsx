@@ -61,7 +61,7 @@ const About = () => {
               <div className="absolute -top-8 -right-8 about-animate opacity-0 glass rounded-xl p-4 shadow-sm" style={{ animationDelay: '500ms' }}>
                 <div className="flex flex-col">
                   <span className="text-sm font-medium">Education</span>
-                  <span className="text-xs text-foreground/70">RUET, CSE</span>
+                  <span className="text-xs text-foreground/70">CSE, RUET</span>
                   <span className="text-xs text-foreground/70">CGPA: 3.28/4.00</span>
                 </div>
               </div>

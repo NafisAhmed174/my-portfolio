@@ -1,6 +1,6 @@
 
 import { cn } from '@/lib/utils';
-import { Github, Linkedin, Mail, ExternalLink } from 'lucide-react';
+import { Github, Linkedin, Mail, ExternalLink, Download} from 'lucide-react';
 
 const Hero = () => {
   const scrollToNextSection = () => {
@@ -82,6 +82,17 @@ const Hero = () => {
                 2107 (5 Stars) <ExternalLink size={14} />
               </a>
             </div>
+          </div>
+          <div className="mt-6 mb-8 flex justify-center achievement-animate opacity-0" style={{ animationDelay: '300ms' }}>
+            <a 
+              href="/Nafis_Ahmed_CV.pdf" 
+              target="_blank"
+              rel="noopener noreferrer"
+              className="button-fancy flex items-center gap-2"
+            >
+              <Download size={18} />
+              Download CV
+            </a>
           </div>
         </div>
       </div>
