@@ -3,6 +3,13 @@ import { cn } from '@/lib/utils';
 import { Github, Linkedin, Mail, ExternalLink } from 'lucide-react';
 
 const Hero = () => {
+  const scrollToNextSection = () => {
+    const aboutSection = document.getElementById('about');
+    if (aboutSection) {
+      aboutSection.scrollIntoView({ behavior: 'smooth' });
+    }
+  };
+
   return (
     <section id="top" className="min-h-screen flex items-center justify-center relative px-6 overflow-hidden">
       <div 
@@ -79,14 +86,18 @@ const Hero = () => {
         </div>
       </div>
       
-      <div className="absolute bottom-12 left-1/2 transform -translate-x-1/2 opacity-0 animate-fade-in animate-delay-800">
+      <button 
+        onClick={scrollToNextSection}
+        className="absolute bottom-12 left-1/2 transform -translate-x-1/2 opacity-0 animate-fade-in animate-delay-800 cursor-pointer hover:translate-y-1 transition-transform duration-300"
+        aria-label="Scroll to next section"
+      >
         <div className="animate-float">
           <svg width="24" height="44" viewBox="0 0 24 44" fill="none" xmlns="http://www.w3.org/2000/svg">
             <rect x="1" y="1" width="22" height="42" rx="11" stroke="currentColor" strokeWidth="2" strokeOpacity="0.3"/>
             <circle cx="12" cy="12" r="6" fill="currentColor" fillOpacity="0.3" className="animate-slide-in opacity-0"/>
           </svg>
         </div>
-      </div>
+      </button>
     </section>
   );
 };
