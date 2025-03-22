@@ -1,3 +1,4 @@
+
 import { useEffect, useRef } from 'react';
 
 const Skills = () => {
@@ -82,6 +83,26 @@ const Skills = () => {
               </div>
             </div>
           ))}
+        </div>
+
+        <div className="mt-12 skills-animate opacity-0 p-6 rounded-xl gradient-border border border-border/50 bg-card/30 max-w-3xl mx-auto">
+          <h3 className="text-xl font-medium mb-4 gradient-text text-center">Certifications</h3>
+          <div className="flex flex-col gap-4">
+            <div className="flex flex-col md:flex-row gap-4 items-start md:items-center">
+              <div className="flex-1">
+                <h4 className="font-medium">Complete MERN Stack Web Development</h4>
+                <p className="text-foreground/70 text-sm">Ostad</p>
+              </div>
+              <a 
+                href="https://ostad.app/share/certificate/c20161-nafis-ahmed" 
+                target="_blank" 
+                rel="noopener noreferrer"
+                className="text-sm px-3 py-1 bg-primary/10 text-primary rounded-md hover:bg-primary/20 transition-colors"
+              >
+                View Certificate
+              </a>
+            </div>
+          </div>
         </div>
 
         <div className="mt-16 text-center skills-animate opacity-0">
